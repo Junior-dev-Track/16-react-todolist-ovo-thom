@@ -4,8 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [tasks, setTasks] = useState([]); 
-  const [taskInput, setTaskInput] = useState(''); 
+  const [tasks, setTasks] = useState([]);
+  const [taskInput, setTaskInput] = useState('');
 
 
   const handleTaskInputChange = (event) => {
@@ -14,9 +14,9 @@ function App() {
 
 
   const handleSubmit = (event) => {
-    event.preventDefault(); 
-    if (taskInput.trim() !== '') { 
-      setTasks([...tasks, taskInput]); 
+    event.preventDefault();
+    if (taskInput.trim() !== '') {
+      setTasks([...tasks, taskInput]);
       setTaskInput('');
     }
   };

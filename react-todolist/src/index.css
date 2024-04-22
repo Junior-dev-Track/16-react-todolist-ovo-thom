@@ -30,9 +30,59 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
+.App {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 3px #646cff;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2em;
   line-height: 1.1;
+  text-align: center;
+  padding-bottom: 18px;
+  position: relative;
+}
+
+h2::after{
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: #646cff;
+  bottom: 0;
+  left: 50%;
+  animation: line 10s infinite;
+  transform: translateX(-50%) scaleX(0);
+}
+
+ul li {
+  list-style: none;
+  cursor: pointer;
+}
+
+ul li::before {
+  content: "✔️";
+  margin-right: 8px;
+
+}
+
+@keyframes line {
+  100% {
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+ margin-right: 15px;
+ padding: 8px;
+ font-size: 1em;
 }
 
 button {
@@ -52,6 +102,10 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+p {
+  font-size: 1.3em;
 }
 
 @media (prefers-color-scheme: light) {
