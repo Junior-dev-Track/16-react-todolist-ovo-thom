@@ -18,6 +18,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -33,19 +34,32 @@ body {
 .App {
   border: none;
   border-radius: 15px;
-  box-shadow: 0 0 5px 3px #646cff;
-  padding: 20px;
+  /* box-shadow: 0 0 5px 2px #646cff; */
+  box-shadow: #646cff 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, #646cff 0px -2px 6px 0px inset;
+  padding: 20px 30px;
 }
 
 h2 {
   font-size: 2em;
-  line-height: 1.1;
   text-align: center;
-  padding-bottom: 18px;
+  padding-bottom: 25px;
   position: relative;
 }
 
-h2::after{
+h2::before {
+  content: url(./assets/todo-img.png);
+  position: absolute;
+  display: block;
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  left: -10px;
+  top: -10px;
+}
+
+h2::after {
   content: "";
   position: absolute;
   height: 1px;
@@ -57,15 +71,21 @@ h2::after{
   transform: translateX(-50%) scaleX(0);
 }
 
+ul {
+  padding: 0;
+}
+
 ul li {
   list-style: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 ul li::before {
   content: "✔️";
   margin-right: 8px;
-
 }
 
 @keyframes line {
@@ -80,9 +100,9 @@ form {
 }
 
 input[type="text"] {
- margin-right: 15px;
- padding: 8px;
- font-size: 1em;
+  margin-right: 15px;
+  padding: 8px;
+  font-size: 1em;
 }
 
 button {
@@ -96,9 +116,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -108,14 +130,20 @@ p {
   font-size: 1.3em;
 }
 
+.delete-button {
+  margin-left: auto;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
